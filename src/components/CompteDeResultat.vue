@@ -225,16 +225,16 @@ onMounted(fetchIncomeStatement)
             <div class="space-y-3">
               <div class="flex justify-between items-center">
                 <span class="text-gray-600">Total Produits</span>
-                <span class="font-medium">{{ Math.abs(incomeStatement.totalRevenues).toLocaleString('fr-FR') }} €</span>
+                <span class="font-medium">{{ Math.abs(incomeStatement.totalRevenues).toLocaleString('fr-FR') }} Ariary</span>
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-gray-600">Total Charges</span>
-                <span class="font-medium">{{ Math.abs(incomeStatement.totalExpenses).toLocaleString('fr-FR') }} €</span>
+                <span class="font-medium">{{ Math.abs(incomeStatement.totalExpenses).toLocaleString('fr-FR') }} Ariary</span>
               </div>
               <div class="flex justify-between items-center font-semibold">
                 <span>Résultat Net</span>
                 <span :class="incomeStatement.netIncome >= 0 ? 'text-green-600' : 'text-red-600'">
-                  {{ incomeStatement.netIncome.toLocaleString('fr-FR') }} €
+                  {{ incomeStatement.netIncome.toLocaleString('fr-FR') }} Ariary
                 </span>
               </div>
             </div>
@@ -247,7 +247,7 @@ onMounted(fetchIncomeStatement)
           <div v-for="revenue in incomeStatement.revenues" :key="revenue.accountCode" class="border-b pb-2">
             <div class="flex justify-between items-center">
               <span>{{ revenue.accountName }}</span>
-              <span>{{ Math.abs(revenue.balance).toLocaleString('fr-FR') }} €</span>
+              <span>{{ Math.abs(revenue.balance).toLocaleString('fr-FR') }} Ariary</span>
             </div>
           </div>
         </div>
@@ -258,7 +258,7 @@ onMounted(fetchIncomeStatement)
           <div v-for="expense in incomeStatement.expenses" :key="expense.accountCode" class="border-b pb-2">
             <div class="flex justify-between items-center">
               <span>{{ expense.accountName }}</span>
-              <span>{{ Math.abs(expense.balance).toLocaleString('fr-FR') }} €</span>
+              <span>{{ Math.abs(expense.balance).toLocaleString('fr-FR') }} Ariary</span>
             </div>
           </div>
         </div>

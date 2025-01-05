@@ -31,10 +31,11 @@ export function useRatiosApi() {
 
       // Envoyer les ratios à votre API backend Spring Boot pour analyse
       const ratiosMessage = `
-        Je souhaite analyser, en 2 phrases pour chaque ratio, les ratios suivants pour IT Corporation, secteur automobile, année fiscale 2024 :
+        Je souhaite analyser, en 2 phrases pour chaque ratio, les ratios suivants pour IT Corporation :
         - Ratio d'endettement = ${ratios.value.debtEquityRatio}
         - Ratio de rentabilité = ${ratios.value.returnOnEquity}
         - Ratio de liquidité = ${ratios.value.currentRatio}
+        Saute d'une ligne après chaque ratio
       `
 
       const analysisResponse = await axios.post('http://localhost:8081/api/analyse-ratios', {
